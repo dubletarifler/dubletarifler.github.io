@@ -658,28 +658,68 @@ body[data-tema="aksam"] .menu-burger {
 }
 
 /* ============================================
-   5. İLETİŞİM
+   4. HAKKIMIZDA: DURU'NUN TANITIMI
    ============================================ */
 
-.iletisim-izgara {
+.duru-tanitim {
   display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  margin-top: 24px;
+  align-items: center;
+  gap: 24px;
+  max-width: 640px;
+  margin: 16px 0 40px;
 }
 
-.iletisim-izgara > div {
-  flex: 1 1 200px;
+.duru-foto {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 3px solid var(--vurgu);
+  object-fit: cover;
+  transition: border-color 0.6s;
 }
 
-.iletisim-izgara h3 {
+.duru-tanitim h3 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.duru-tanitim p {
+  color: var(--soluk);
+}
+
+.hikaye-baslik {
   color: var(--vurgu);
   font-size: 1rem;
-  margin-bottom: 4px;
 }
 
-.iletisim-izgara p {
+/* Telefonda fotoğraf yazının üstüne geçer */
+@media (max-width: 560px) {
+  .duru-tanitim {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ============================================
+   5. INSTAGRAM
+   ============================================ */
+
+.instagram-alani {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 16px;
+  max-width: 640px;
+}
+
+.instagram-alani p {
   color: var(--soluk);
+}
+
+.kucuk-not {
+  font-size: 0.9rem;
 }
 
 /* ============================================

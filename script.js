@@ -31,11 +31,15 @@ if (yuzde < 0) {
 function ritmiYaz() {
   let durum;
   if (dakika < acilis) {
-    durum = dil === "en" ? "We're closed now, see you at 08:00." : "Şu an kapalıyız, 08:00'de görüşürüz.";
+    durum = dil === "en" ? "Duru is still asleep, she'll be in the kitchen at 08:00." : "Duru henüz uyanmadı, 08:00'de mutfakta.";
+  } else if (simdi.getHours() < 17) {
+    durum = dil === "en"
+      ? "It's " + saatYazisi + " and Duru is at the coffee machine. This much of the day has passed:"
+      : "Şu an saat " + saatYazisi + ", Duru kahve başında. Günün bu kadarı geride kaldı:";
   } else {
     durum = dil === "en"
-      ? "It's " + saatYazisi + " and we're open. This much of the day has passed:"
-      : "Şu an saat " + saatYazisi + ", açığız. Günün bu kadarı geride kaldı:";
+      ? "It's " + saatYazisi + " and Duru is at the grill. This much of the day has passed:"
+      : "Şu an saat " + saatYazisi + ", Duru ızgara başında. Günün bu kadarı geride kaldı:";
   }
   document.getElementById("ritim-durum").textContent = durum;
 }
@@ -144,7 +148,7 @@ function diliUygula(yeniDil) {
     resim.alt = dil === "en" ? resim.dataset.enAlt : resim.dataset.trAlt;
   });
 
-  document.title = dil === "en" ? "Duble — Coffee & Burgers · Ankara" : "Duble — Kahve & Burger · Ankara";
+  document.title = dil === "en" ? "Duble — Coffee & Burger Recipes" : "Duble — Kahve & Burger Tarifleri";
   dilButonu.textContent = dil === "en" ? "TR" : "EN"; // buton, geçilecek dili gösterir
   ritmiYaz();
   temaButonunuYaz();
